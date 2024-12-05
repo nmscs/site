@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог - 17 Carat</title>
+    <title>Корзина - 17 Carat</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo3.png" type="image/x-icon"> <!-- Иконка вкладки -->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> <!-- Подключение шрифта PT Serif -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="catalog-page">
+<body class="cart-page">
     <div class="container">
-      <!-- Блок 1: Логотип и навигация -->
-      <div class="header">
-          <div class="logo">
-              <img src="logob.png" alt="17 Carat Logo">
-          </div>
-          <div class="nav">
-              <a href="index.html">Главная</a>
-              <a href="catalog.html">Каталог</a>
-              <a href="cart.html">Корзина</a>
-          </div>
-      </div>
+        <!-- Блок 1: Логотип и навигация -->
+        <div class="header">
+            <div class="logo">
+                <img src="logob.png" alt="17 Carat Logo">
+            </div>
+            <div class="nav">
+                <a href="index.html">Главная</a>
+                <a href="catalog.php">Каталог</a>
+                <a href="cart.php">Корзина</a>
+            </div>
+        </div>
 
-      <!-- Блок 2: Корзина -->
+        <!-- Блок 2: Корзина -->
         <div class="cart-section">
             <div class="cart-items" id="cart-items">
                 <!-- Товары будут добавляться здесь с помощью JavaScript -->
             </div>
             <div class="delivery-form">
                 <h3>Способ доставки</h3>
-                <form id="deliveryForm">
+                <form id="deliveryForm" action="feedback.php" method="POST">
+                    <label>
+                        <input type="checkbox" name="delivery" value="pickup">
+                        Самовывоз из магазина
+                    </label>
                     <label>
                         <input type="checkbox" name="delivery" value="courier">
                         Доставка курьером
@@ -41,16 +44,17 @@
                         <label for="phone">Укажите номер телефона:</label>
                         <input type="text" id="phone" name="phone" placeholder="Укажите номер телефона" required>
                     </div>
+                    <button type="submit">Заказать</button>
                 </form>
+            </div>
             <div class="cart-total">
                 <h2>Итого</h2>
                 <p id="total-price">0 руб.</p>
-                <button id="orderButton">Заказать</button>
             </div>
         </div>
     </div>
 
-      <!-- Блок 3: Футер с контактами -->
+    <!-- Блок 3: Футер с контактами -->
     <div class="footer">
         <div class="footer-logo">
             <img src="logo1.png" alt="17 Carat Logo">
@@ -63,28 +67,6 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="orderModalLabel">Сообщение</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="orderModalBody">
-                    <!-- Сообщение будет добавляться здесь -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
     <script>
         // JavaScript для отображения полей доставки курьером
