@@ -17,7 +17,7 @@
             </div>
             <div class="nav">
                 <a href="index.html">Главная</a>
-                <a href="catalog.php">Каталог</a>
+                <a href="catalog.html">Каталог</a>
                 <a href="cart.php">Корзина</a>
             </div>
         </div>
@@ -30,10 +30,6 @@
             <div class="delivery-form">
                 <h3>Способ доставки</h3>
                 <form id="deliveryForm" action="feedback.php" method="POST">
-                    <label>
-                        <input type="checkbox" name="delivery" value="pickup">
-                        Самовывоз из магазина
-                    </label>
                     <label>
                         <input type="checkbox" name="delivery" value="courier">
                         Доставка курьером
@@ -66,7 +62,28 @@
             <p>Ульяновск, ул. Университетская набережная, 40</p>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Сообщение</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="orderModalBody">
+                    <!-- Сообщение будет добавляться здесь -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
     <script>
         // JavaScript для отображения полей доставки курьером
