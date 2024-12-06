@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Load cart items if on the cart page
-    if (window.location.pathname.includes('cart.html')) {
+    if (window.location.pathname.includes('cart.php')) {
         loadCartItems();
     }
 
